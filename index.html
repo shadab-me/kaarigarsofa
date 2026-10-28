@@ -6,7 +6,7 @@
 <title>Sofa Repair at Home in Noida, Greater Noida West &amp; Ghaziabad | Kaarigar Sofa Repair</title>
 <meta name="description" content="Doorstep sofa repair, cushion refilling, fabric change, leather and recliner repair in Noida, Greater Noida West, Indirapuram and Ghaziabad. Price on WhatsApp in 15 minutes. No advance for repairs. 6-month written warranty.">
 <link rel="canonical" href="https://www.kaarigarsofa.in/">
-<meta name="theme-color" content="#0E5E57">
+<meta name="theme-color" content="#0A4641">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/logo-canva.png">
 <meta property="og:type" content="website">
@@ -24,208 +24,318 @@
 @font-face{font-family:"Poppins";font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format("woff2")}
 @font-face{font-family:"Poppins";font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format("woff2")}
 :root{
-  --teal:#0E5E57;--teal-d:#0A4641;--teal-l:#E3F0EE;
-  --gold:#F2A900;--gold-d:#8A5F00;--gold-l:#FFF4D6;
-  --cream:#FBF7F0;--paper:#FFFFFF;--ink:#1B2524;--muted:#566664;--line:#E7DFD2;
-  --wa:#15803D;--wa-d:#116B33;
-  --r:16px;--shadow:0 10px 30px -12px rgba(14,46,43,.25);
+  --teal-9:#062F2B;--teal-8:#0A4641;--teal:#0E5E57;--teal-1:#E3F0EE;
+  --gold:#F2A900;--gold-h:#FFB81F;--stitch:#D99A00;--gold-ink:#8A5F00;
+  --paper:#FFFFFF;--stone:#EEF2F1;--line:#D7E0DE;--ink:#14201F;--muted:#4F5E5C;--on-dark-2:#C3DCD7;
+  --wa:#25D366;--wa-h:#1EBE5A;--wa-ink:#05291A;--err:#B3261E;--ok:#0F6B3A;--field:#7D908D;
+  --r:20px;--ease:cubic-bezier(.16,1,.3,1);
+  --sh-1:0 1px 2px rgba(0,0,0,.06),0 4px 14px -6px rgba(0,0,0,.14);
+  --sh-2:0 2px 6px rgba(0,0,0,.12),0 24px 48px -20px rgba(0,0,0,.45);
+  --stitch-h:repeating-linear-gradient(90deg,var(--stitch) 0 6px,transparent 6px 11px);
+  --stitch-v:repeating-linear-gradient(180deg,var(--stitch) 0 6px,transparent 6px 11px);
   --head:"Poppins","Segoe UI",system-ui,sans-serif;
   --body:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 var(--body);padding-bottom:72px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--teal) var(--stone);accent-color:var(--teal)}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);caret-color:var(--teal)}
+::selection{background:var(--gold);color:var(--ink)}
 img,svg{max-width:100%}
-a{color:var(--teal)}
-h1,h2,h3{font-family:var(--head);line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em}
-h1{font-size:clamp(1.85rem,5.4vw,3rem)}
-h2{font-size:clamp(1.5rem,3.8vw,2.2rem)}
-h3{font-size:1.1rem}
-p{margin:0 0 1em}
-.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
-.sec{padding:56px 0}
-.sec-alt{background:var(--paper);border-block:1px solid var(--line)}
-.eyebrow{display:inline-block;font:600 .8rem/1 var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px}
-.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
-.center{text-align:center}.center .lead{margin-inline:auto}
+a{color:var(--teal);text-underline-offset:.2em}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(1.6rem,1.1rem + 2vw,2.4rem);letter-spacing:-.02em;line-height:1.15}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0 0 1em;text-wrap:pretty}
+[id]{scroll-margin-top:80px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+@media(min-width:640px){.wrap{padding:0 28px}}
+.sec{padding:clamp(56px,3rem + 3vw,96px) 0}
+.stone{background:var(--stone)}
+.sec-head{max-width:760px;margin-bottom:32px}
+.sec-head h2{margin-bottom:.35em}
+.sec-head p{color:var(--muted);font-size:1.075rem;max-width:62ch;margin:0}
 .ic{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tn{font-variant-numeric:tabular-nums}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font:600 1rem/1 var(--head);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s}
-.btn:active{transform:scale(.98)}
-.btn-call{background:var(--teal);color:#fff}.btn-call:hover{background:var(--teal-d)}
-.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:var(--wa-d)}
-.btn-gold{background:var(--gold);color:#1B1400}.btn-gold:hover{background:#E09D00}
-.btn-ghost{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:0;border-radius:999px;font:600 1rem/1.1 var(--head);text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.7;cursor:progress}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-light{background:#fff;color:var(--teal-8)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-line{background:#fff;color:var(--teal-8);border:1.5px solid var(--teal)}
+@media(hover:hover){
+  .btn-gold:hover{background:var(--gold-h)}
+  .btn-wa:hover{background:var(--wa-h)}
+  .btn-light:hover{background:var(--teal-1)}
+  .btn-teal:hover{background:var(--teal-8)}
+  .btn-line:hover{background:var(--teal-1)}
+}
+.btn-sm{min-height:44px;padding:0 14px;gap:8px;font-size:.92rem}
+.btn-sm .ic{width:20px;height:20px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 
-/* top bar + header */
-.topbar{background:var(--teal-d);color:#E6F2F0;font-size:.85rem;text-align:center;padding:8px 16px}
-.topbar b{color:var(--gold)}
-@media(max-width:639px){.topbar{font-size:.78rem;padding:7px 10px}.topbar .tb-long{display:none}}
-header.site{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--teal)}
-.brand svg{width:42px;height:42px}
-.brand-name{font:700 1.25rem/1 var(--head)}
-.brand-sub{display:block;font:600 .62rem/1 var(--head);letter-spacing:.32em;color:var(--gold-d);margin-top:4px}
-.head-call{min-height:44px;padding:0 16px;font-size:.95rem}
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:var(--teal-8);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+@media(min-width:900px){header.site .wrap{height:72px}}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand svg{width:40px;height:40px;flex:none}
+.brand-name{display:block;font:700 1.2rem/1 var(--head);letter-spacing:-.01em}
+.brand-sub{display:block;font:600 .6875rem/1 var(--head);letter-spacing:.2em;color:var(--gold);margin-top:4px}
+.head-info{display:none;margin:0 auto 0 8px;padding-left:24px;border-left:1px solid rgba(255,255,255,.16);font-size:.86rem;line-height:1.45;color:var(--on-dark-2)}
+.head-info b{color:#fff;font-weight:600}
+@media(min-width:1000px){.head-info{display:block}}
+.head-call{min-height:44px;padding:0 18px;font-size:.95rem}
 .head-call .num{display:none}
 @media(min-width:640px){.head-call .num{display:inline}.head-call .lbl{display:none}}
 
+/* woven teal ground */
+.weave{background-color:var(--teal-8);background-image:
+  radial-gradient(1100px 560px at 82% -12%,rgba(255,255,255,.09),transparent 62%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 3px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.11) 0 1px,transparent 1px 3px)}
+
 /* hero */
-.hero{padding:36px 0 48px;background:
-  radial-gradient(900px 400px at 85% -10%,rgba(242,169,0,.18),transparent 60%),
-  radial-gradient(700px 380px at -10% 110%,rgba(14,94,87,.12),transparent 60%)}
-.hero-grid{display:grid;gap:28px}
-@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:48px}.hero{padding:64px 0 72px}}
-/* phones: pull the estimate form up right under the headline, benefits follow it */
+.hero{color:#fff;padding:26px 0 44px}
+@media(min-width:960px){.hero{padding:64px 0 84px}}
+.hero-grid{display:grid}
+@media(min-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr) 440px;gap:56px;align-items:start}}
+.hero h1{font-size:clamp(1.75rem,.9rem + 3.6vw,3.25rem);line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:.45em}
+.stitch{color:var(--gold);background:repeating-linear-gradient(90deg,var(--gold) 0 .34em,transparent .34em .54em) 0 calc(100% - .17em)/100% .09em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:stitch 1.1s var(--ease) .35s backwards}
+@keyframes stitch{from{background-size:0 .09em}}
+.facts{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font:600 .875rem/1.4 var(--head);color:var(--on-dark-2)}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+@media(min-width:960px){.facts{display:none}}
+.rating{display:inline-flex;align-items:center;gap:8px;justify-self:start;margin-bottom:16px;padding:6px 14px;border:1px solid rgba(255,255,255,.22);border-radius:999px;font-size:.9rem;color:#fff}
+.rating .star{width:16px;height:16px;fill:var(--gold)}
+.hero .lead{font-size:1.075rem;color:var(--on-dark-2);max-width:56ch;margin-bottom:22px}
+.ticks{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;color:var(--on-dark-2)}
+.ticks b{color:#fff;font-weight:600}
+.ticks .ic{color:var(--gold);stroke-width:2.6;margin-top:1px}
+.hero .btns .btn{flex:1 1 220px}
+@media(min-width:960px){.hero .btns .btn{flex:0 0 auto}}
+.hero .note{font-size:.92rem;color:var(--on-dark-2);margin:16px 0 0}
+.hero .note a{color:var(--gold);font-weight:600}
+/* phones: the estimate form comes straight after the headline, the rest follows it */
 @media(max-width:959px){
   .hero-copy{display:contents}
-  .hero-grid{gap:0}
-  .hero-grid .rating{justify-self:start}
-  .hero-grid .quote{order:1;margin:4px 0 8px}
-  .hero-grid .ticks,.hero-grid .btns,.hero-grid .note{order:2}
+  .hero-grid .quote{order:1;margin:0 0 32px}
+  .hero-grid .lead,.hero-grid .ticks,.hero-grid .btns,.hero-grid .note{order:2}
 }
-.hero h1 .hl{color:var(--teal);background:linear-gradient(transparent 62%,rgba(242,169,0,.45) 0)}
-.ticks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}
-.ticks li{display:flex;gap:10px;align-items:flex-start}
-.ticks .ic{color:#fff;background:var(--teal);border-radius:50%;padding:4px;width:24px;height:24px;stroke-width:3;margin-top:1px}
-.rating{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem;margin-bottom:14px}
-.rating .stars{color:var(--gold);letter-spacing:2px}
-.hero .note{font-size:.85rem;color:var(--muted);margin-top:12px}
 
-/* quote card */
-.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}
-.quote h2{font-size:1.4rem;margin-bottom:4px}
-.quote .sub{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+/* estimate card */
+.card{background:var(--paper);color:var(--ink);border-radius:var(--r);box-shadow:var(--sh-2)}
+.quote{position:relative;padding:26px 22px 22px}
+.quote::before{content:"";position:absolute;inset:7px;border:1.5px dashed var(--stitch);border-radius:14px;pointer-events:none}
+@media(min-width:960px){.quote{padding:32px 30px 28px}}
+.status{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:.875rem;font-weight:600;color:var(--muted)}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.status.is-open{color:var(--ok)}.status.is-open .dot{background:#1E9E57}
+.status.is-closed{color:var(--gold-ink)}.status.is-closed .dot{background:var(--gold)}
+.quote h2{font-size:1.45rem;letter-spacing:-.015em;margin-bottom:4px}
+.quote .sub{color:var(--muted);font-size:.93rem;margin-bottom:18px}
 .field{margin-bottom:14px}
-.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
-.field input,.field select{width:100%;min-height:50px;border:1.5px solid #D6CDBE;border-radius:12px;padding:0 14px;font:inherit;background:#fff;color:var(--ink)}
-.field input:focus,.field select:focus{outline:3px solid rgba(14,94,87,.25);border-color:var(--teal)}
+.field label{display:block;margin-bottom:6px;font-weight:600;font-size:.9rem}
+.opt{font-weight:400;color:var(--muted)}
+.field input,.field select{width:100%;min-height:48px;padding:0 14px;border:1.5px solid var(--field);border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s var(--ease)}
+.field input::placeholder{color:#5F6E6C;opacity:1}
+.field select{-webkit-appearance:none;appearance:none;padding-right:44px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5l6 6 6-6' fill='none' stroke='%230E5E57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center}
+@media(hover:hover){.field input:hover,.field select:hover{border-color:var(--teal)}}
+.field input:focus,.field select:focus{border-color:var(--teal)}
+.field input[aria-invalid="true"]{border-color:var(--err)}
 .phone-in{display:flex}
-.phone-in span{display:flex;align-items:center;padding:0 12px;border:1.5px solid #D6CDBE;border-right:0;border-radius:12px 0 0 12px;background:var(--cream);font-weight:600}
-.phone-in input{border-radius:0 12px 12px 0}
-.err{color:#B3261E;font-size:.85rem;margin-top:6px;display:none}
-.quote .btn{width:100%}
-.fine{font-size:.78rem;color:var(--muted);margin:12px 0 0;text-align:center}
-.thanks{text-align:center}
-.thanks .big{font:700 1.3rem/1.3 var(--head);color:var(--teal);margin:6px 0 8px}
+.phone-in span{display:flex;align-items:center;padding:0 12px;border:1.5px solid var(--field);border-right:0;border-radius:12px 0 0 12px;background:var(--stone);font-weight:600}
+.phone-in input{min-width:0;border-radius:0 12px 12px 0}
+.err{display:none;margin-top:6px;font-size:.86rem;color:var(--err)}
+.quote .btn{width:100%;margin-top:4px}
+.fine{margin:12px 0 0;font-size:.8rem;color:var(--muted);text-align:center}
+.thanks{text-align:center;padding:6px 0}
+.thanks-ic{width:56px;height:56px;color:var(--ok)}
+.thanks .big{margin:6px 0 8px;font:700 1.3rem/1.3 var(--head);color:var(--teal-8)}
+.thanks .big:focus{outline:none}
+.thanks p{color:var(--muted)}
 
-/* trust strip */
-.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:-8px}
-@media(min-width:860px){.trust{grid-template-columns:repeat(4,1fr)}}
-.trust div{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px}
-.trust .ic{width:38px;height:38px;padding:8px;border-radius:12px;background:var(--gold-l);color:var(--gold-d)}
-.trust b{display:block;font-family:var(--head);font-size:.95rem;line-height:1.25}
-.trust small{color:var(--muted);font-size:.8rem;line-height:1.3;display:block}
+/* guarantee strip */
+.strip{background:var(--paper);border-bottom:1px solid var(--line)}
+.strip ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:1fr 1fr}
+.strip li{position:relative;display:flex;flex-direction:column;gap:10px;padding:22px 14px}
+.strip .ic{width:28px;height:28px;color:var(--gold-ink);stroke-width:1.8}
+.strip b{display:block;font:600 1rem/1.3 var(--head)}
+.strip small{display:block;margin-top:3px;font-size:.875rem;line-height:1.4;color:var(--muted)}
+.strip li:nth-child(odd)::after,.strip li:nth-child(-n+2)::before{content:"";position:absolute;pointer-events:none}
+.strip li:nth-child(odd)::after{top:18px;bottom:18px;right:0;width:2px;background:var(--stitch-v)}
+.strip li:nth-child(-n+2)::before{left:14px;right:14px;bottom:0;height:2px;background:var(--stitch-h)}
+@media(min-width:640px){.strip li{flex-direction:row;align-items:flex-start;gap:14px;padding:26px 22px}}
+@media(min-width:860px){
+  .strip ul{grid-template-columns:repeat(4,1fr)}
+  .strip li::before{content:none!important}
+  .strip li:not(:last-child)::after{content:"";position:absolute;top:24px;bottom:24px;right:0;width:2px;background:var(--stitch-v)}
+}
 
-/* services */
-.grid{display:grid;gap:16px}
-@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:960px){.grid-4{grid-template-columns:repeat(4,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:640px) and (max-width:959px){.grid-4,.grid-3{grid-template-columns:repeat(2,1fr)}}
-.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column}
-.svc .ic{width:44px;height:44px;padding:10px;border-radius:12px;background:var(--teal-l);color:var(--teal);margin-bottom:12px}
-.svc p{color:var(--muted);font-size:.93rem;flex:1}
-.price{font:700 1rem/1.2 var(--head);color:var(--teal)}
-.price small{font:500 .8rem var(--body);color:var(--muted)}
-.svc a{font-weight:600;font-size:.9rem;margin-top:10px;text-decoration:none}
+/* rate card */
+.ratecard{background:var(--paper);border-radius:var(--r);box-shadow:var(--sh-2);overflow:hidden}
+.rc-head{color:#fff;padding:24px 18px 22px}
+@media(min-width:760px){.rc-head{padding:30px 28px 28px}}
+.rc-head h3{margin:0 0 6px;font-size:clamp(1.3rem,1rem + 1vw,1.65rem);font-weight:700;letter-spacing:-.015em;color:#fff}
+.rc-head p{margin:0;max-width:56ch;font-size:.95rem;color:var(--on-dark-2)}
+.svc{display:grid;grid-template-columns:32px minmax(0,1fr) auto;grid-template-areas:"ic name price" "ic desc desc" "ic note note" "act act act";column-gap:14px;padding:22px 16px}
+.svc+.svc{border-top:1px solid var(--line)}
+.svc>.ic{grid-area:ic;width:28px;height:28px;margin-top:1px;color:var(--teal)}
+.svc h3{grid-area:name;align-self:center;margin:0;font-size:1.05rem;line-height:1.3}
+.price{grid-area:price;margin:0;text-align:right;font-family:var(--head);line-height:1.15}
+.price span{display:block;font:500 .75rem/1.3 var(--body);color:var(--muted)}
+.price b{font-size:1.3rem;font-weight:700;color:var(--teal-8);font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{display:block;margin-top:2px;font:400 .78rem/1.3 var(--body);color:var(--muted)}
+.desc{grid-area:desc;margin:6px 0 0;max-width:62ch;font-size:.95rem;color:var(--muted)}
+.pnote{grid-area:note;margin:8px 0 0;max-width:62ch;font-size:.875rem;color:var(--teal-8)}
+.act{grid-area:act;display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:16px}
+.act .btn{white-space:nowrap}
+@media(min-width:760px){
+  .svc{grid-template-columns:40px minmax(0,1fr) 150px;grid-template-areas:"ic name price" "ic desc price" "ic note price" "ic act act";column-gap:18px;padding:24px 28px}
+  .svc>.ic{width:32px;height:32px}
+  .act{display:flex}
+}
+@media(min-width:1080px){
+  .svc{grid-template-columns:40px minmax(0,1fr) 140px 290px;grid-template-areas:"ic name price act" "ic desc price act" "ic note price act";align-items:start}
+  .act{align-self:center;justify-content:flex-end;margin-top:0}
+}
+.rc-foot{display:grid;background:var(--teal-1);border-top:1px solid var(--line)}
+.rc-foot>div{padding:20px 18px}
+.rc-foot>div+div{border-top:1px solid rgba(10,70,65,.14)}
+.rc-foot b{display:block;margin-bottom:4px;font:600 1rem/1.35 var(--head);color:var(--teal-8)}
+.rc-foot p{margin:0;font-size:.93rem;color:#2F4D49}
+.rc-foot strong{color:var(--teal-8)}
+@media(min-width:760px){
+  .rc-foot{grid-template-columns:1fr 1.7fr}
+  .rc-foot>div{padding:24px 28px}
+  .rc-foot>div+div{border-top:0;border-left:1px solid rgba(10,70,65,.14)}
+}
 
-/* price table */
-.ptable{width:100%;border-collapse:collapse;background:var(--paper);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.ptable th,.ptable td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-.ptable th{background:var(--teal);color:#fff;font:600 .9rem var(--head)}
-.ptable td:last-child,.ptable th:last-child{text-align:right;white-space:nowrap}
-.ptable tr:last-child td{border-bottom:0}
-.ptable td small{display:block;color:var(--muted);font-size:.82rem}
-.callout{background:var(--gold-l);border:1px dashed var(--gold);border-radius:var(--r);padding:16px 18px;margin-top:16px;font-size:.95rem}
+/* fabric change */
+.ba{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.ba{grid-template-columns:1.05fr 1fr;gap:56px}}
+.ba-art{background:var(--stone);border-radius:var(--r);padding:20px}
+.ba-art svg{display:block;width:100%;height:auto}
+.ba-copy>p{color:var(--muted);max-width:60ch}
+.swatches{list-style:none;margin:22px 0 28px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px 12px}
+@media(min-width:560px){.swatches{grid-template-columns:repeat(6,1fr)}}
+.swatches li{font:600 .82rem/1.25 var(--head)}
+.chip{display:block;aspect-ratio:1.3;margin-bottom:8px;border:1px solid rgba(0,0,0,.08);border-radius:10px}
+.sw-velvet{background:#0E5E57}
+.sw-chenille{background:#C2AE8C}
+.sw-linen{background:#9AA4A6}
+.sw-suede{background:#A8643A}
+.sw-boucle{background:#E9E2D6}
+.sw-leather{background:#3A2419}
 
-/* steps */
-.steps{counter-reset:s;display:grid;gap:16px}
-@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
-.step{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px 20px}
-.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#1B1400;font:700 1.1rem var(--head);margin-bottom:12px}
-.step p{color:var(--muted);font-size:.93rem;margin:0}
+/* how it works */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.step{position:relative;padding-left:60px}
+.knot{position:absolute;left:0;top:0;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);outline:5px solid var(--stone);font:700 1.05rem/1 var(--head);font-variant-numeric:tabular-nums}
+.step:not(:last-child)::before{content:"";position:absolute;left:19px;top:20px;width:2px;height:calc(100% + 28px);background:repeating-linear-gradient(180deg,var(--gold) 0 6px,transparent 6px 11px)}
+.step h3{margin:7px 0 6px}
+.step p{margin:0;max-width:42ch;font-size:.95rem;color:var(--muted)}
+@media(min-width:860px){
+  .steps{grid-template-columns:repeat(4,1fr);gap:32px}
+  .step{padding:62px 0 0}
+  .step:not(:last-child)::before{left:20px;top:19px;width:calc(100% + 32px);height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 11px)}
+  .step h3{margin-top:0}
+}
 
 /* compare */
-.compare{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--line);font-size:.94rem;text-align:left}
-.compare th{font:600 .88rem var(--head);background:var(--cream)}
-.compare th.us,.compare td.us{background:var(--teal-l);color:var(--teal-d);font-weight:600}
-.compare tbody th{background:none;font:400 .94rem/1.6 var(--body)}
-.compare tr:last-child td,.compare tr:last-child th{border-bottom:0}
+.cmp{max-width:880px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
+.compare{width:100%;border-collapse:collapse;background:var(--paper)}
+.compare th,.compare td{padding:13px 12px;border-bottom:1px solid var(--line);font-size:.92rem;text-align:left;vertical-align:top}
+@media(min-width:640px){.compare th,.compare td{padding:15px 18px;font-size:.96rem}}
+.compare thead th{font:600 .9rem/1.3 var(--head)}
+.compare thead th.us{background:var(--teal);color:#fff}
+.compare thead th.them,.compare thead td{background:var(--stone);color:var(--muted)}
+.compare tbody th{font-weight:600}
+.compare td.us{background:var(--teal-1);color:var(--teal-8);font-weight:600}
+.compare td.them{color:var(--muted)}
+.compare tr:last-child>*{border-bottom:0}
 
-/* before/after + fabrics */
-.ba{display:grid;gap:28px;align-items:center}
-@media(min-width:900px){.ba{grid-template-columns:1fr 1fr}}
-.ba-art{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px}
-.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.sw{border-radius:12px;aspect-ratio:1.4;display:flex;align-items:flex-end;padding:8px;color:#fff;font:600 .78rem var(--head);text-shadow:0 1px 2px rgba(0,0,0,.4);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
-.sw-velvet{background:radial-gradient(120% 90% at 30% 20%,#2E8C80,#0E5E57 55%,#08403B)}
-.sw-chenille{background:repeating-linear-gradient(45deg,#C9B79A 0 3px,#BCA885 3px 6px)}
-.sw-linen{background:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 2px,transparent 2px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 4px),#9AA4A6}
-.sw-suede{background:radial-gradient(140% 120% at 70% 10%,#C27A45,#8E4F27)}
-.sw-boucle{background:radial-gradient(circle at 3px 3px,#fff 1.6px,transparent 2px) 0 0/7px 7px,#E9E2D6;color:#4a4033;text-shadow:none}
-.sw-leather{background:radial-gradient(120% 100% at 30% 10%,#5A3A2A,#2C1A12)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-.gallery figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.gallery figcaption{padding:10px 12px;font-size:.88rem;color:var(--muted)}
-
-/* reviews */
-.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.rev .stars{color:var(--gold);letter-spacing:2px}
-.rev p{font-size:.95rem}
-.rev b{font-family:var(--head);font-size:.92rem}
+/* work photos + reviews (only shown once real ones exist) */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px}
+.gallery figure{margin:0;overflow:hidden;background:var(--paper);border-radius:16px;box-shadow:var(--sh-1)}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption{padding:12px 14px;font-size:.9rem;color:var(--muted)}
+#reviews{border-top:1px solid var(--line)}
+.revs{display:grid;gap:16px}
+@media(min-width:640px){.revs{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{padding:22px;background:var(--stone);border-radius:16px}
+.rev .stars{display:flex;gap:2px;margin-bottom:10px;color:var(--gold-ink)}
+.rev .stars svg{width:18px;height:18px;fill:currentColor}
+.rev b{font:600 .92rem var(--head)}
 .rev small{color:var(--muted)}
+.rev-more{margin:24px 0 0}
 
 /* areas */
-.areas{display:grid;gap:16px}
-@media(min-width:760px){.areas{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1040px){.areas{grid-template-columns:repeat(4,1fr)}}
-.area{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px}
-.area h3{color:var(--teal);margin-bottom:10px}
-.area ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.area li{font-size:.85rem;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.areas{display:grid;gap:28px}
+@media(min-width:640px){.areas{grid-template-columns:repeat(2,1fr);gap:32px}}
+@media(min-width:1040px){.areas{grid-template-columns:1.6fr 1fr 1fr .8fr}}
+.area{padding-top:16px;border-top:2px solid var(--teal)}
+.area h3{margin-bottom:12px;color:var(--teal-8)}
+.area ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.area li{padding:5px 12px;background:var(--paper);border:1px solid var(--line);border-radius:999px;font-size:.875rem;font-variant-numeric:tabular-nums}
 
 /* faq */
-.faq{max-width:820px;margin:0 auto}
-.faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
-.faq summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font:600 1rem/1.4 var(--head);position:relative}
+.faq-grid{display:grid}
+@media(min-width:960px){.faq-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.65fr);gap:64px}.faq-grid .sec-head{position:sticky;top:112px;align-self:start}}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{position:relative;padding:18px 44px 18px 0;list-style:none;cursor:pointer;font:600 1.02rem/1.45 var(--head);transition:color .2s var(--ease)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:18px;top:12px;font:400 1.6rem/1 var(--body);color:var(--teal)}
-.faq details[open] summary::after{content:"–"}
-.faq details>div{padding:0 18px 16px;color:var(--muted)}
+.faq summary::after{content:"";position:absolute;right:4px;top:23px;width:16px;height:16px;background:linear-gradient(var(--teal),var(--teal)) center/16px 2px no-repeat,linear-gradient(var(--teal),var(--teal)) center/2px 16px no-repeat;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+@media(hover:hover){.faq summary:hover{color:var(--teal)}}
+.faq details>div{max-width:65ch;padding:0 0 20px;color:var(--muted)}
 
-/* final cta */
-.final{background:var(--teal);color:#fff;border-radius:26px;padding:40px 22px;text-align:center;background-image:radial-gradient(600px 260px at 90% 0,rgba(242,169,0,.25),transparent 60%)}
-.final h2{color:#fff}.final p{color:#D7EBE8;max-width:52ch;margin:0 auto 22px}
+/* final call band */
+.final{color:#fff;text-align:center;padding:clamp(56px,3rem + 3vw,96px) 0}
+.final h2{max-width:22ch;margin:0 auto .4em;color:#fff}
+.final p{max-width:52ch;margin:0 auto 26px;color:var(--on-dark-2)}
 .final .btns{justify-content:center}
-.final .btn-call{background:#fff;color:var(--teal)}
+@media(max-width:559px){.btns .btn{flex:1 1 100%}}
 
 /* footer */
-footer{padding:40px 0 24px;font-size:.9rem;color:var(--muted)}
-.foot{display:grid;gap:24px}
-@media(min-width:760px){.foot{grid-template-columns:1.4fr 1fr 1fr}}
-footer h3{font-size:.95rem;color:var(--ink)}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-footer a{color:var(--muted)}
-.legal{border-top:1px solid var(--line);margin-top:28px;padding-top:16px;font-size:.8rem}
-.legal a{color:var(--teal);font-weight:600}
+footer{padding:48px 0 28px;background:var(--teal-9);color:var(--on-dark-2);font-size:.92rem}
+.foot{display:grid;gap:28px}
+@media(min-width:760px){.foot{grid-template-columns:1.5fr 1fr 1fr}}
+.foot-about{max-width:46ch;margin:14px 0 0}
+footer h3{margin-bottom:12px;font-size:.95rem;color:#fff}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{color:var(--on-dark-2)}
+@media(hover:hover){footer a:hover{color:#fff}}
+footer .brand{display:inline-flex}
+.legal{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:.84rem}
+.legal a{color:var(--gold);font-weight:600}
 
-/* sticky mobile bar + floating whatsapp */
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08)}
-.mbar .btn{min-height:50px;padding:0 10px;font-size:.98rem}
+/* sticky phone bar + floating whatsapp */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -2px 6px rgba(0,0,0,.05),0 -10px 24px -10px rgba(0,0,0,.18)}
+.mbar .btn{min-height:50px;padding:0 10px}
 .fwa{display:none}
-@media(min-width:900px){
-  body{padding-bottom:0}
+@media(max-width:1279px){footer{padding-bottom:calc(28px + 76px + env(safe-area-inset-bottom))}}
+@media(min-width:1280px){
   .mbar{display:none}
-  .fwa{display:flex;position:fixed;right:22px;bottom:22px;z-index:30;box-shadow:0 10px 24px rgba(29,168,81,.4)}
+  .fwa{display:inline-flex;position:fixed;right:20px;bottom:20px;z-index:30;width:56px;height:56px;min-height:56px;padding:0;border-radius:50%;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.16),0 16px 32px -12px rgba(0,0,0,.4)}
 }
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.dark :focus-visible{outline-color:var(--gold)}
+.dark .card :focus-visible{outline-color:var(--teal)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -259,7 +369,7 @@ window.SITE = {
   // Fill these ONLY with real numbers and real reviews from your Google Business Profile.
   googleReviewsUrl: "",             // e.g. "https://g.page/r/XXXX/review"
   rating: null,                     // e.g. { value: 4.9, count: 37 }
-  reviews: [],                      // e.g. { name: "Ritika S.", area: "Sector 76, Noida", text: "..." }
+  reviews: [],                      // e.g. { name: "Ritika S.", area: "Sector 76, Noida", stars: 5, text: "..." }
   photos: []                        // e.g. { src: "img/work/recliner-sec137.jpg", caption: "Recliner footrest fixed, Sector 137" }
 };
 </script>
@@ -280,20 +390,20 @@ window.SITE = {
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="i-swatch" viewBox="0 0 24 24"><path d="M4 4h6v16H6a2 2 0 0 1-2-2zM10 8l4.2-4.2 4.2 4.2-8.4 8.4"/><path d="M10 14h8a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-8"/></symbol>
-  <symbol id="i-logo" viewBox="0 0 64 64"><g fill="none" stroke="#0E5E57" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 31V22a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v9"/><path d="M31 16v15"/><rect x="7" y="27" width="9" height="17" rx="4.5"/><rect x="46" y="27" width="9" height="17" rx="4.5"/><path d="M16 35h30v9H16z"/><path d="M12 44v4M50 44v4"/></g><path d="M58 7 51 37" stroke="#F2A900" stroke-width="3.2" stroke-linecap="round"/><path d="M51 39c-3 9-16 12-41 11" fill="none" stroke="#F2A900" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 31V22a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v9"/><path d="M31 16v15"/><rect x="7" y="27" width="9" height="17" rx="4.5"/><rect x="46" y="27" width="9" height="17" rx="4.5"/><path d="M16 35h30v9H16z"/><path d="M12 44v4M50 44v4"/></g><path d="M58 7 51 37" stroke="#F2A900" stroke-width="3.2" stroke-linecap="round"/><path d="M51 39c-3 9-16 12-41 11" fill="none" stroke="#F2A900" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 4"/></symbol>
 </svg>
 
-<div class="topbar"><span class="tb-long">Doorstep sofa repair in </span><b>Noida · Greater Noida West · Ghaziabad · East Delhi</b><span class="tb-long"> — open <span data-hours>8 AM – 9 PM, all 7 days</span></span></div>
-
-<header class="site">
+<header class="site dark">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Kaarigar Sofa Repair, home">
       <svg aria-hidden="true"><use href="#i-logo"/></svg>
       <span><span class="brand-name">Kaarigar</span> <span class="brand-sub">SOFA REPAIR</span></span>
     </a>
-    <a class="btn btn-call head-call" data-tel href="tel:+919999999999">
+    <p class="head-info"><b>Noida · Greater Noida West · Ghaziabad · East Delhi</b><br>Doorstep visits, open <span data-hours>8&nbsp;AM – 9&nbsp;PM, all 7 days</span></p>
+    <a class="btn btn-gold head-call" data-tel href="tel:+919999999999">
       <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
-      <span class="lbl">Call now</span><span class="num" data-phone-text>+91 99999 99999</span>
+      <span class="lbl">Call now</span><span class="num tn" data-phone-text>+91 99999 99999</span>
     </a>
   </div>
 </header>
@@ -301,12 +411,16 @@ window.SITE = {
 <main id="top">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero weave dark">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="rating" data-rating hidden><span class="stars">★★★★★</span><span data-rating-text></span></div>
-      <span class="eyebrow">Doorstep service · same-day visits</span>
-      <h1><span class="hl" data-service-h>Sofa repair at home</span> in <span data-area>Noida</span>. Fixed in front of you.</h1>
+      <div class="rating" data-rating hidden><svg class="star" aria-hidden="true"><use href="#i-star"/></svg><span data-rating-text></span></div>
+      <h1><span data-service-h>Sofa repair at home</span> in <span class="stitch" data-area>Noida</span>. Fixed in front of you.</h1>
+      <ul class="facts">
+        <li>Price in 15 min</li>
+        <li>No advance for repairs</li>
+        <li>6-month warranty</li>
+      </ul>
       <p class="lead">Sagging seats, a wobbly frame, torn fabric or a recliner that won't close? Send us a photo on WhatsApp. You'll have a price within 15 minutes, and our kaarigar can usually come over the same day.</p>
       <ul class="ticks">
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Price fixed before we start.</b> No "dekh ke batayenge" surprises.</span></li>
@@ -315,19 +429,20 @@ window.SITE = {
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Fabric swatch books brought to your home</b>, so you choose in your own light.</span></li>
       </ul>
       <div class="btns">
-        <a class="btn btn-call" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-phone-text>+91 99999 99999</span></a>
+        <a class="btn btn-light" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call <span class="tn" data-phone-text>+91 99999 99999</span></a>
         <a class="btn btn-wa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp a photo</a>
       </div>
-      <p class="note">Most single repairs cost ₹700 – ₹2,500. <a href="#prices">See the full price list</a>.</p>
+      <p class="note">Most single repairs cost <span class="tn">₹700&nbsp;–&nbsp;₹2,500</span>. <a href="#prices">See the full price list</a>.</p>
     </div>
 
     <div class="card quote" id="quote">
       <form id="leadForm" novalidate>
+        <p class="status" id="openStatus"><span class="dot" aria-hidden="true"></span><span id="openText">Open 8&nbsp;AM – 9&nbsp;PM, all 7 days</span></p>
         <h2>Get a free estimate</h2>
         <p class="sub" id="formSub">Takes 20 seconds. We call back within 10 minutes during working hours.</p>
         <div class="field">
-          <label for="f-name">Your name</label>
-          <input id="f-name" name="name" autocomplete="name" required placeholder="e.g. Neha">
+          <label for="f-name">Your name <span class="opt">(optional)</span></label>
+          <input id="f-name" name="name" autocomplete="name" placeholder="e.g. Neha">
         </div>
         <div class="field">
           <label for="f-phone">Mobile number</label>
@@ -363,8 +478,8 @@ window.SITE = {
         <p class="fine">We use your number only to reply about your sofa. No spam. <a href="privacy.html">Privacy</a></p>
       </form>
       <div class="thanks" id="thanks" hidden>
-        <svg class="ic" style="width:56px;height:56px;color:var(--wa)" aria-hidden="true"><use href="#i-check"/></svg>
-        <p class="big" id="thanksBig">Thanks! We'll call you shortly.</p>
+        <svg class="ic thanks-ic" aria-hidden="true"><use href="#i-check"/></svg>
+        <p class="big" id="thanksBig" tabindex="-1">Thanks! We'll call you shortly.</p>
         <p id="thanksNote">Want an exact price faster? Send 2–3 photos of the sofa on WhatsApp.</p>
         <a class="btn btn-wa" id="thanksWa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span id="thanksWaText">Send photos on WhatsApp</span></a>
       </div>
@@ -372,83 +487,141 @@ window.SITE = {
   </div>
 </section>
 
-<!-- TRUST -->
-<section aria-label="Why customers book us">
-  <div class="wrap trust">
-    <div><svg class="ic" aria-hidden="true"><use href="#i-rupee"/></svg><span><b>Prices on this page</b><small>Same rates on the phone</small></span></div>
-    <div><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span><b>6-month warranty</b><small>In writing, on WhatsApp</small></span></div>
-    <div><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span><b>Same-day visit</b><small>For bookings before 2 PM</small></span></div>
-    <div><svg class="ic" aria-hidden="true"><use href="#i-swatch"/></svg><span><b>Fabrics at your door</b><small>Choose at home, not at a shop</small></span></div>
+<!-- GUARANTEES -->
+<section class="strip" aria-label="Why customers book us">
+  <div class="wrap">
+    <ul>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-rupee"/></svg><span><b>Prices on this page</b><small>Same rates on the phone</small></span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span><b>6-month warranty</b><small>In writing, on WhatsApp</small></span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span><b>Same-day visit</b><small>For bookings before 2&nbsp;PM</small></span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-swatch"/></svg><span><b>Fabrics at your door</b><small>Choose at home, not at a shop</small></span></li>
+    </ul>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="sec" id="services">
+<!-- SERVICES + PRICES -->
+<section class="sec stone" id="services">
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">What we fix</span>
+    <div class="sec-head">
       <h2>Almost anything that's wrong with a sofa</h2>
-      <p class="lead">Every job is done by our own kaarigars, people who've spent years doing exactly this. Prices below are starting rates. Your exact price is fixed before any work begins.</p>
+      <p>Every job is done by our own kaarigars, people who've spent years doing exactly this. Prices below are starting rates. Your exact price is fixed before any work begins.</p>
     </div>
-    <div class="grid grid-4" style="margin-top:28px">
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-tool"/></svg><h3>Frame &amp; spring repair</h3><p>Wobbly arms, a cracked wooden rail, sagging springs or snapped webbing. We open it up, fix the structure properly and close it back neatly.</p><div class="price">from ₹699</div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-cushion"/></svg><h3>Cushion refilling</h3><p>If you sink right in, the foam is finished. We cut new high-density foam to size, and you pick soft, medium or firm.</p><div class="price">from ₹499 <small>/ seat</small></div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-fabric"/></svg><h3>Fabric change</h3><p>A sofa that's solid but tired-looking only needs new fabric. Velvet, suede, chenille, linen-look or leatherette. You choose at home.</p><div class="price">from ₹899 <small>/ seat + fabric</small></div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg><h3>Leather, leatherette &amp; rexine</h3><p>Cracks, cuts, colour fade and that flaky peeling on rexine. Small damage gets patched and colour-matched. Badly peeled leatherette gets re-covered.</p><div class="price">from ₹1,199</div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-recliner"/></svg><h3>Recliner repair</h3><p>A stuck lever, a footrest that won't close, a broken mechanism, or a power recliner that stopped moving. Most get fixed on the first visit.</p><div class="price">from ₹1,499</div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg><h3>Sofa cum bed</h3><p>A jammed folding mechanism, broken slats, loose hinges. We make it open and close smoothly again.</p><div class="price">from ₹1,199</div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-chair"/></svg><h3>Dining &amp; office chairs</h3><p>Seat re-covering for dining chairs, plus office chair seat and foam replacement. Good to club with a sofa job.</p><div class="price">from ₹349 <small>/ chair</small></div></article>
-      <article class="svc"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg><h3>Shampoo &amp; dry clean</h3><p>Deep cleaning for fabric sofas: stains, food spills, pet smell. Dries in a few hours with fans on.</p><div class="price">from ₹349 <small>/ seat</small></div></article>
+
+    <div class="ratecard" id="prices">
+      <div class="rc-head weave">
+        <h3>What it usually costs</h3>
+        <p>Most sofa repair shops won't put prices online. We do, so you know roughly what to expect before you even call.</p>
+      </div>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-tool"/></svg>
+        <h3>Frame &amp; spring repair</h3>
+        <p class="price"><span>from</span> <b>₹699</b></p>
+        <p class="desc">Wobbly arms, a cracked wooden rail, sagging springs or snapped webbing. We open it up, fix the structure properly and close it back neatly.</p>
+        <p class="pnote">Per sofa section, depends on damage.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="0">Get exact price<span class="vh"> for frame and spring repair</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Frame &amp; spring repair" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about frame and spring repair</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-cushion"/></svg>
+        <h3>Cushion refilling</h3>
+        <p class="price"><span>from</span> <b>₹499</b><small>per seat</small></p>
+        <p class="desc">If you sink right in, the foam is finished. We cut new high-density foam to size, and you pick soft, medium or firm.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="1">Get exact price<span class="vh"> for cushion refilling</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Cushion refilling" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about cushion refilling</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-fabric"/></svg>
+        <h3>Fabric change</h3>
+        <p class="price"><span>from</span> <b>₹899</b><small>per seat + fabric</small></p>
+        <p class="desc">A sofa that's solid but tired-looking only needs new fabric. Velvet, suede, chenille, linen-look or leatherette. You choose at home.</p>
+        <p class="pnote">Labour only. The fabric you choose is extra, from <span class="tn">₹300</span>/metre.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="2">Get exact price<span class="vh"> for a fabric change</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Fabric change" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about a fabric change</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg>
+        <h3>Leather, leatherette &amp; rexine</h3>
+        <p class="price"><span>from</span> <b>₹1,199</b></p>
+        <p class="desc">Cracks, cuts, colour fade and that flaky peeling on rexine. Small damage gets patched and colour-matched. Badly peeled leatherette gets re-covered.</p>
+        <p class="pnote">Patch and colour-match, per area.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="3">Get exact price<span class="vh"> for leather repair</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Leather / leatherette repair" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about leather repair</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-recliner"/></svg>
+        <h3>Recliner repair</h3>
+        <p class="price"><span>from</span> <b>₹1,499</b></p>
+        <p class="desc">A stuck lever, a footrest that won't close, a broken mechanism, or a power recliner that stopped moving. Most get fixed on the first visit.</p>
+        <p class="pnote">Per recliner seat, parts extra if needed.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="4">Get exact price<span class="vh"> for recliner repair</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Recliner repair" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about recliner repair</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-bed"/></svg>
+        <h3>Sofa cum bed</h3>
+        <p class="price"><span>from</span> <b>₹1,199</b></p>
+        <p class="desc">A jammed folding mechanism, broken slats, loose hinges. We make it open and close smoothly again.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="5">Get exact price<span class="vh"> for sofa cum bed repair</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Sofa cum bed repair" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about sofa cum bed repair</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-chair"/></svg>
+        <h3>Dining &amp; office chairs</h3>
+        <p class="price"><span>from</span> <b>₹349</b><small>per chair</small></p>
+        <p class="desc">Seat re-covering for dining chairs, plus office chair seat and foam replacement. Good to club with a sofa job.</p>
+        <p class="pnote">Dining chair re-covering, fabric included for the standard range.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="6">Get exact price<span class="vh"> for chair re-covering</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Dining / office chair re-covering" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about chair re-covering</span></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>
+        <h3>Shampoo &amp; dry clean</h3>
+        <p class="price"><span>from</span> <b>₹349</b><small>per seat</small></p>
+        <p class="desc">Deep cleaning for fabric sofas: stains, food spills, pet smell. Dries in a few hours with fans on.</p>
+        <div class="act">
+          <a class="btn btn-line btn-sm" href="#quote" data-pick="7">Get exact price<span class="vh"> for sofa shampoo</span></a>
+          <a class="btn btn-wa btn-sm" data-wa-svc="Sofa shampoo / dry cleaning" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp<span class="vh"> us about sofa shampoo</span></a>
+        </div>
+      </article>
+
+      <div class="rc-foot">
+        <div>
+          <b>Home inspection: <span class="tn">₹0</span></b>
+          <p>Free if you go ahead with the work, <span class="tn">₹199</span> if you don't.</p>
+        </div>
+        <div>
+          <b>Example: a 5-seater fabric change</b>
+          <p>A 5-seater (3+1+1) fabric change with mid-range fabric usually comes to about <strong class="tn">₹11,000&nbsp;–&nbsp;₹16,000 all-in</strong>. That's often less than half the price of a new sofa of the same size, and you keep the solid wooden frame you already have.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRICES -->
-<section class="sec sec-alt" id="prices">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">Price list</span>
-      <h2>What it usually costs</h2>
-      <p class="lead">Most sofa repair shops won't put prices online. We do, so you know roughly what to expect before you even call.</p>
-    </div>
-    <div style="max-width:820px;margin:28px auto 0">
-      <table class="ptable">
-        <thead><tr><th>Job</th><th>Starting from</th></tr></thead>
-        <tbody>
-          <tr><td>Frame, spring or webbing repair<small>Per sofa section, depends on damage</small></td><td>₹699</td></tr>
-          <tr><td>Cushion refilling with new foam<small>Per seat, high-density foam cut to size</small></td><td>₹499</td></tr>
-          <tr><td>Fabric change, labour only<small>Per seat; fabric you choose is extra (from ₹300/metre)</small></td><td>₹899</td></tr>
-          <tr><td>Leather / leatherette repair<small>Patch and colour-match, per area</small></td><td>₹1,199</td></tr>
-          <tr><td>Recliner mechanism / lever repair<small>Per recliner seat, parts extra if needed</small></td><td>₹1,499</td></tr>
-          <tr><td>Sofa cum bed mechanism repair</td><td>₹1,199</td></tr>
-          <tr><td>Dining chair re-covering<small>Per chair, fabric included for standard range</small></td><td>₹349</td></tr>
-          <tr><td>Sofa shampoo / dry cleaning<small>Per seat</small></td><td>₹349</td></tr>
-          <tr><td>Home inspection<small>Free if you go ahead with the work, ₹199 if you don't</small></td><td>₹0</td></tr>
-        </tbody>
-      </table>
-      <div class="callout"><b>Example:</b> a 5-seater (3+1+1) fabric change with mid-range fabric usually comes to about <b>₹11,000 – ₹16,000 all-in</b>. That's often less than half the price of a new sofa of the same size, and you keep the solid wooden frame you already have.</div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="sec" id="how">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">How it works</span>
-      <h2>Photo in the morning, fixed sofa by evening</h2>
-    </div>
-    <div class="steps" style="margin-top:28px">
-      <div class="step"><h3>Send a photo</h3><p>WhatsApp us 2–3 photos of the problem, or just call. A short video of a stuck recliner helps a lot.</p></div>
-      <div class="step"><h3>Get a price</h3><p>You get a price range within 15 minutes. The final price is fixed at your door, before any work starts.</p></div>
-      <div class="step"><h3>We fix it at home</h3><p>Most repairs take 2–4 hours in your living room. For a full fabric change, we may take cushions to our workshop for a day.</p></div>
-      <div class="step"><h3>Check, then pay</h3><p>Sit on it, check the stitching, open the recliner. Pay only when you're happy, and the warranty arrives on WhatsApp.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER + FABRICS -->
-<section class="sec sec-alt" id="fabrics">
+<!-- FABRIC CHANGE -->
+<section class="sec" id="fabrics">
   <div class="wrap ba">
     <div class="ba-art">
       <svg viewBox="0 0 320 190" role="img" aria-label="Illustration: a worn sofa on the left half and the same sofa with new teal fabric on the right half">
@@ -456,7 +629,7 @@ window.SITE = {
           <clipPath id="cl"><rect x="0" y="0" width="160" height="190"/></clipPath>
           <clipPath id="cr"><rect x="160" y="0" width="160" height="190"/></clipPath>
         </defs>
-        <ellipse cx="160" cy="166" rx="140" ry="9" fill="#000" opacity=".07"/>
+        <ellipse cx="160" cy="166" rx="140" ry="9" fill="#0A4641" opacity=".1"/>
         <g clip-path="url(#cl)">
           <rect x="40" y="34" width="240" height="70" rx="18" fill="#B3AA9D"/>
           <rect x="20" y="66" width="40" height="80" rx="16" fill="#A79D8E"/>
@@ -479,70 +652,87 @@ window.SITE = {
         </g>
         <line x1="160" y1="16" x2="160" y2="172" stroke="#fff" stroke-width="4"/>
         <line x1="160" y1="16" x2="160" y2="172" stroke="#0E5E57" stroke-width="1.5" stroke-dasharray="5 5"/>
-        <circle cx="160" cy="94" r="13" fill="#fff" stroke="#0E5E57" stroke-width="2"/>
-        <path d="M155 94h10M155 94l3-3M155 94l3 3M165 94l-3-3M165 94l-3 3" stroke="#0E5E57" stroke-width="1.8" stroke-linecap="round"/>
-        <rect x="18" y="10" width="64" height="22" rx="11" fill="#fff" stroke="#E7DFD2"/><text x="50" y="25" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#566664">Before</text>
+        <rect x="18" y="10" width="64" height="22" rx="11" fill="#fff" stroke="#D5DEDC"/><text x="50" y="25" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#4F5E5C">Before</text>
         <rect x="238" y="10" width="64" height="22" rx="11" fill="#0E5E57"/><text x="270" y="25" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#fff">After</text>
       </svg>
     </div>
-    <div>
-      <span class="eyebrow">Old sofa, new look</span>
+    <div class="ba-copy">
       <h2>Keep the frame. Change everything you see.</h2>
       <p>Most sofas we get called for have a perfectly good wooden frame. Only the foam and fabric are tired. Re-doing those costs a fraction of a new sofa and saves you the hassle of selling or dumping the old one.</p>
       <p>When we visit, the kaarigar brings swatch books so you can hold the fabric up against your curtains and floor before you decide.</p>
-      <div class="swatches" aria-label="Fabric types we offer">
-        <div class="sw sw-velvet">Velvet</div><div class="sw sw-suede">Suede</div><div class="sw sw-chenille">Chenille</div>
-        <div class="sw sw-linen">Linen-look</div><div class="sw sw-boucle">Bouclé</div><div class="sw sw-leather">Leatherette</div>
+      <ul class="swatches" aria-label="Fabric types we offer">
+        <li><span class="chip sw-velvet"></span>Velvet</li>
+        <li><span class="chip sw-suede"></span>Suede</li>
+        <li><span class="chip sw-chenille"></span>Chenille</li>
+        <li><span class="chip sw-linen"></span>Linen-look</li>
+        <li><span class="chip sw-boucle"></span>Bouclé</li>
+        <li><span class="chip sw-leather"></span>Leatherette</li>
+      </ul>
+      <div class="btns">
+        <a class="btn btn-teal" href="#quote" data-pick="2">Get a fabric change price</a>
+        <a class="btn btn-wa" data-wa-svc="Fabric change" href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp a photo</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REAL WORK PHOTOS (shows only when SITE.photos has entries) -->
-<section class="sec" id="work" hidden>
+<!-- HOW IT WORKS -->
+<section class="sec stone" id="how">
   <div class="wrap">
-    <div class="center"><span class="eyebrow">Recent work</span><h2>Sofas we fixed this month</h2></div>
-    <div class="gallery" id="gallery" style="margin-top:24px"></div>
+    <div class="sec-head"><h2>Photo in the morning, fixed sofa by evening</h2></div>
+    <ol class="steps">
+      <li class="step"><span class="knot" aria-hidden="true">1</span><h3>Send a photo</h3><p>WhatsApp us 2–3 photos of the problem, or just call. A short video of a stuck recliner helps a lot.</p></li>
+      <li class="step"><span class="knot" aria-hidden="true">2</span><h3>Get a price</h3><p>You get a price range within 15 minutes. The final price is fixed at your door, before any work starts.</p></li>
+      <li class="step"><span class="knot" aria-hidden="true">3</span><h3>We fix it at home</h3><p>Most repairs take 2–4 hours in your living room. For a full fabric change, we may take cushions to our workshop for a day.</p></li>
+      <li class="step"><span class="knot" aria-hidden="true">4</span><h3>Check, then pay</h3><p>Sit on it, check the stitching, open the recliner. Pay only when you're happy, and the warranty arrives on WhatsApp.</p></li>
+    </ol>
   </div>
 </section>
 
 <!-- WHY US -->
 <section class="sec" id="why">
-  <div class="wrap" style="max-width:860px">
-    <div class="center"><span class="eyebrow">Why people choose us</span><h2>What's different about booking with us</h2></div>
-    <div style="overflow-x:auto;margin-top:24px">
+  <div class="wrap">
+    <div class="sec-head"><h2>What's different about booking with us</h2></div>
+    <div class="cmp">
       <table class="compare">
-        <thead><tr><td></td><th scope="col" class="us">Kaarigar Sofa Repair</th><th scope="col">Typical local shop</th></tr></thead>
+        <thead><tr><td></td><th scope="col" class="us">Kaarigar Sofa Repair</th><th scope="col" class="them">Typical local shop</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Price before the visit</th><td class="us">Yes, on WhatsApp from photos</td><td>"Aake dekhenge"</td></tr>
-          <tr><th scope="row">Advance payment</th><td class="us">None for repairs</td><td>Often asked upfront</td></tr>
-          <tr><th scope="row">Warranty</th><td class="us">6 months, in writing</td><td>A verbal promise</td></tr>
-          <tr><th scope="row">Choosing fabric</th><td class="us">Swatches at your home</td><td>You visit the shop</td></tr>
-          <tr><th scope="row">After the job</th><td class="us">We sweep up foam and threads</td><td>Mess left behind</td></tr>
+          <tr><th scope="row">Price before the visit</th><td class="us">Yes, on WhatsApp from photos</td><td class="them">"Aake dekhenge"</td></tr>
+          <tr><th scope="row">Advance payment</th><td class="us">None for repairs</td><td class="them">Often asked upfront</td></tr>
+          <tr><th scope="row">Warranty</th><td class="us">6 months, in writing</td><td class="them">A verbal promise</td></tr>
+          <tr><th scope="row">Choosing fabric</th><td class="us">Swatches at your home</td><td class="them">You visit the shop</td></tr>
+          <tr><th scope="row">After the job</th><td class="us">We sweep up foam and threads</td><td class="them">Mess left behind</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS (shows only when real reviews or a Google link are added) -->
-<section class="sec sec-alt" id="reviews" hidden>
+<!-- REAL WORK PHOTOS (shows only when SITE.photos has entries) -->
+<section class="sec stone" id="work" hidden>
   <div class="wrap">
-    <div class="center"><span class="eyebrow">Reviews</span><h2>What customers say on Google</h2></div>
-    <div class="grid grid-3" id="reviewList" style="margin-top:24px"></div>
-    <p class="center" style="margin-top:20px" id="reviewLinkWrap" hidden><a class="btn btn-ghost" id="reviewLink" href="#" target="_blank" rel="noopener">Read all our Google reviews</a></p>
+    <div class="sec-head"><h2>Sofas we fixed this month</h2></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- REVIEWS (shows only when real reviews or a Google link are added) -->
+<section class="sec" id="reviews" hidden>
+  <div class="wrap">
+    <div class="sec-head"><h2>What customers say on Google</h2></div>
+    <div class="revs" id="reviewList"></div>
+    <p class="rev-more" id="reviewLinkWrap" hidden><a class="btn btn-line" id="reviewLink" href="#" target="_blank" rel="noopener">Read all our Google reviews</a></p>
   </div>
 </section>
 
 <!-- AREAS -->
-<section class="sec" id="areas">
+<section class="sec stone" id="areas">
   <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">Areas we cover</span>
+    <div class="sec-head">
       <h2>Sofa repair near you in Noida, Greater Noida West &amp; Ghaziabad</h2>
-      <p class="lead">Our kaarigars are based in and around Noida, so most of these areas get a same-day visit. Don't see your society? Call us. We probably cover it.</p>
+      <p>Our kaarigars are based in and around Noida, so most of these areas get a same-day visit. Don't see your society? Call us. We probably cover it.</p>
     </div>
-    <div class="areas" style="margin-top:28px">
+    <div class="areas">
       <div class="area"><h3>Noida</h3><ul><li>Sector 18</li><li>Sector 44</li><li>Sector 50</li><li>Sector 51</li><li>Sector 52</li><li>Sector 61</li><li>Sector 62</li><li>Sector 75</li><li>Sector 76</li><li>Sector 77</li><li>Sector 78</li><li>Sector 93</li><li>Sector 100</li><li>Sector 104</li><li>Sector 107</li><li>Sector 110</li><li>Sector 119</li><li>Sector 121</li><li>Sector 128</li><li>Sector 134</li><li>Sector 137</li><li>Sector 143</li><li>Sector 150</li><li>Sector 168</li></ul></div>
       <div class="area"><h3>Greater Noida West</h3><ul><li>Gaur City 1</li><li>Gaur City 2</li><li>Noida Extension</li><li>Techzone 4</li><li>Ek Murti</li><li>Bisrakh</li><li>Sector 1</li></ul></div>
       <div class="area"><h3>Ghaziabad</h3><ul><li>Indirapuram</li><li>Vaishali</li><li>Vasundhara</li><li>Kaushambi</li><li>Crossings Republik</li><li>Raj Nagar Extension</li></ul></div>
@@ -552,12 +742,15 @@ window.SITE = {
 </section>
 
 <!-- FAQ -->
-<section class="sec sec-alt" id="faq">
-  <div class="wrap">
-    <div class="center"><span class="eyebrow">Questions</span><h2>Things people usually ask us</h2></div>
-    <div class="faq" style="margin-top:24px">
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <h2>Things people usually ask us</h2>
+      <p>Still unsure? <a data-wa href="https://wa.me/919999999999">Ask us on WhatsApp</a> or <a data-tel href="tel:+919999999999">call us</a>.</p>
+    </div>
+    <div class="faq">
       <details><summary>Do you repair the sofa at my home, or take it away?</summary><div>Almost every repair happens at your home: frames, springs, foam, recliners, leather patches. For a full fabric change we sometimes take the cushions or a section to our workshop for a day. Pickup and drop are free within the areas listed above.</div></details>
-      <details><summary>How much does sofa repair cost in Noida?</summary><div>Most single repairs land between ₹700 and ₹2,500. Cushion refilling starts at ₹499 a seat. A full fabric change on a 5-seater is usually ₹11,000 – ₹16,000 including mid-range fabric. Send photos on WhatsApp and we'll give you a real number for your sofa.</div></details>
+      <details><summary>How much does sofa repair cost in Noida?</summary><div>Most single repairs land between ₹700 and&nbsp;₹2,500. Cushion refilling starts at ₹499 a seat. A full fabric change on a 5-seater is usually ₹11,000&nbsp;–&nbsp;₹16,000 including mid-range fabric. Send photos on WhatsApp and we'll give you a real number for your sofa.</div></details>
       <details><summary>Do I have to pay anything in advance?</summary><div>Not for repairs. You pay after the job, once you've checked it. For a fabric change we ask you to pay only for the fabric once you've picked it, because it gets cut to your sofa's size. Labour is always paid at the end.</div></details>
       <details><summary>What does the 6-month warranty cover?</summary><div>Our workmanship: stitching, joints we fixed, springs and webbing we replaced, and recliner mechanisms we repaired. If any of it gives way within 6 months, we come back and fix it free. It doesn't cover new damage like pet scratches, cuts, burns or stains.</div></details>
       <details><summary>How long does the work take?</summary><div>Small repairs take 1–3 hours. A recliner usually takes 1–2 hours. Foam refilling for a 5-seater takes about half a day. A full fabric change takes 1–2 days depending on the sofa.</div></details>
@@ -568,36 +761,34 @@ window.SITE = {
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="sec">
+<!-- FINAL CALL -->
+<section class="final weave dark">
   <div class="wrap">
-    <div class="final">
-      <h2>Send a photo now. Know the price in 15 minutes.</h2>
-      <p>No advance for repairs, no pressure. If the price doesn't work for you, that's fine too.</p>
-      <div class="btns">
-        <a class="btn btn-call" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call <span data-phone-text>+91 99999 99999</span></a>
-        <a class="btn btn-wa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp us</a>
-      </div>
+    <h2>Send a photo now. Know the price in 15 minutes.</h2>
+    <p>No advance for repairs, no pressure. If the price doesn't work for you, that's fine too.</p>
+    <div class="btns">
+      <a class="btn btn-light" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call <span class="tn" data-phone-text>+91 99999 99999</span></a>
+      <a class="btn btn-wa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp us</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer>
+<footer class="dark">
   <div class="wrap">
     <div class="foot">
       <div>
         <a class="brand" href="#top"><svg aria-hidden="true"><use href="#i-logo"/></svg><span><span class="brand-name">Kaarigar</span> <span class="brand-sub">SOFA REPAIR</span></span></a>
-        <p style="margin-top:12px">Doorstep sofa repair, fabric change, cushion refilling, leather and recliner repair across Noida, Greater Noida West, Ghaziabad and East Delhi. We come to you, so there's no shop to visit.</p>
+        <p class="foot-about">Doorstep sofa repair, fabric change, cushion refilling, leather and recliner repair across Noida, Greater Noida West, Ghaziabad and East Delhi. We come to you, so there's no shop to visit.</p>
       </div>
       <div>
         <h3>Contact</h3>
         <ul>
-          <li><a data-tel href="tel:+919999999999" data-phone-text>+91 99999 99999</a></li>
+          <li><a class="tn" data-tel href="tel:+919999999999" data-phone-text>+91 99999 99999</a></li>
           <li><a data-wa href="https://wa.me/919999999999">WhatsApp</a></li>
           <li data-email-wrap hidden><a data-email href="#"></a></li>
-          <li data-hours>8 AM – 9 PM, all 7 days</li>
+          <li data-hours>8&nbsp;AM – 9&nbsp;PM, all 7 days</li>
         </ul>
       </div>
       <div>
@@ -618,31 +809,40 @@ window.SITE = {
 </footer>
 
 <div class="mbar">
-  <a class="btn btn-call" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
+  <a class="btn btn-teal" data-tel href="tel:+919999999999"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
   <a class="btn btn-wa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
 </div>
-<a class="btn btn-wa fwa" data-wa href="https://wa.me/919999999999" aria-label="Chat on WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp us</a>
+<a class="btn btn-wa fwa" data-wa href="https://wa.me/919999999999" aria-label="WhatsApp us"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span class="vh">WhatsApp us</span></a>
 
 <script>
 (function () {
   var S = window.SITE, $ = function (s, r) { return (r || document).querySelector(s); },
       $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
   var isSet = function (v) { return v && !/X{6}|x{6}/.test(v); };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // --- Contact details everywhere on the page ---
   var waBase = "https://wa.me/" + S.whatsapp;
   var waText = "Hi " + S.brand + ", I need help with my sofa. I'll send a photo.";
   $$("[data-tel]").forEach(function (a) { a.href = "tel:" + S.phone; });
   $$("[data-wa]").forEach(function (a) { a.href = waBase + "?text=" + encodeURIComponent(waText); a.target = "_blank"; a.rel = "noopener"; });
+  // Price-list rows: the WhatsApp message names the service the visitor tapped
+  $$("[data-wa-svc]").forEach(function (a) {
+    a.href = waBase + "?text=" + encodeURIComponent("Hi " + S.brand + ", I'd like a price for: " + a.getAttribute("data-wa-svc") + ". I'll send a photo.");
+    a.target = "_blank"; a.rel = "noopener";
+  });
   $$("[data-phone-text]").forEach(function (e) { e.textContent = S.phoneText; });
-  $$("[data-hours]").forEach(function (e) { e.textContent = S.hours; });
+  $$("[data-hours]").forEach(function (e) { e.textContent = S.hours.replace(/ (AM|PM)/g, "\u00a0$1"); });
   if (S.email) { var em = $("[data-email]"); em.href = "mailto:" + S.email; em.textContent = S.email; $("[data-email-wrap]").hidden = false; }
   $("#yr").textContent = new Date().getFullYear();
 
   // --- Working hours, India time: never promise a 10-minute call-back at midnight ---
   var hr = new Date(Date.now() + 330 * 60000).getUTCHours();
   var openNow = hr >= S.openHour && hr < S.closeHour;
-  var openAt = (S.openHour % 12 || 12) + (S.openHour < 12 ? " AM" : " PM");
+  var clock = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "\u00a0AM" : "\u00a0PM"); };
+  var openAt = clock(S.openHour), closeAt = clock(S.closeHour);
+  $("#openText").textContent = openNow ? "Open now, till " + closeAt : "Closed now, opens at " + openAt;
+  $("#openStatus").className = "status " + (openNow ? "is-open" : "is-closed");
   if (!openNow) $("#formSub").textContent = "Takes 20 seconds. We're closed right now, so we'll call you after " + openAt + ".";
 
   // --- Ad-matched headline: ?s=recliner and/or ?area=Indirapuram in the ad's final URL ---
@@ -675,6 +875,16 @@ window.SITE = {
     }
   }
 
+  // --- "Get exact price" on a price-list row: preselect that service and take them to the form ---
+  $$("[data-pick]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      $("#f-service").selectedIndex = +a.getAttribute("data-pick");
+      $("#quote").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      if (!form.hidden) ($("#f-name").value.trim() ? $("#f-phone") : $("#f-name")).focus({ preventScroll: true });
+    });
+  });
+
   // --- Google Ads tag + conversions ---
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); };
@@ -698,14 +908,24 @@ window.SITE = {
   });
 
   // --- Quote form: validate, save (optional), track, then hand off to WhatsApp ---
-  var form = $("#leadForm");
+  var form = $("#leadForm"), ph = $("#f-phone"), phErr = $("#phoneErr");
+  var digits = function () { return ph.value.replace(/\D/g, "").slice(-10); };
+  function markPhone(ok) {
+    phErr.style.display = ok ? "none" : "block";
+    if (ok) { ph.removeAttribute("aria-invalid"); ph.removeAttribute("aria-describedby"); }
+    else { ph.setAttribute("aria-invalid", "true"); ph.setAttribute("aria-describedby", "phoneErr"); }
+  }
+  ph.addEventListener("input", function () { // clear the error as soon as the number is right
+    if (ph.getAttribute("aria-invalid") === "true" && /^[6-9]\d{9}$/.test(digits())) markPhone(true);
+  });
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var d = { name: $("#f-name").value.trim(), phone: $("#f-phone").value.replace(/\D/g, "").slice(-10),
+    var d = { name: $("#f-name").value.trim(), phone: digits(),
               service: $("#f-service").value, area: $("#f-area").value };
     var ok = /^[6-9]\d{9}$/.test(d.phone);
-    $("#phoneErr").style.display = ok ? "none" : "block";
-    if (!ok) { $("#f-phone").focus(); return; }
+    markPhone(ok);
+    if (!ok) { ph.focus(); return; }
+    form.querySelector("[type=submit]").disabled = true;
     if (!d.name) d.name = "Customer";
     if (S.leadSheetUrl) {
       var body = new URLSearchParams({ name: d.name, phone: d.phone, service: d.service, area: d.area,
@@ -723,7 +943,7 @@ window.SITE = {
       $("#thanksNote").textContent = "WhatsApp is opening with your details already typed. Press Send so they reach us. If it didn't open, tap the button below.";
       $("#thanksWaText").textContent = "Open WhatsApp";
     }
-    form.hidden = true; $("#thanks").hidden = false;
+    form.hidden = true; $("#thanks").hidden = false; $("#thanksBig").focus({ preventScroll: true });
     if (isSet(S.googleAdsId)) gtag("set", "user_data", { phone_number: "+91" + d.phone }); // enhanced conversions
     track("form", function () { if (!S.leadSheetUrl) location.href = wa; });
   });
@@ -737,7 +957,9 @@ window.SITE = {
     $("#reviews").hidden = false;
     S.reviews.forEach(function (r) {
       var el = document.createElement("div"); el.className = "rev";
-      el.innerHTML = '<div class="stars">★★★★★</div><p></p><b></b><br><small></small>';
+      var n = Math.max(0, Math.min(5, Math.round(+r.stars || 0))); // stars only when the review gives them
+      el.innerHTML = (n ? '<div class="stars" role="img" aria-label="' + n + ' out of 5 stars">' + new Array(n + 1).join('<svg aria-hidden="true"><use href="#i-star"/></svg>') + '</div>' : "") +
+        '<p></p><b></b><br><small></small>';
       el.querySelector("p").textContent = "“" + r.text + "”";
       el.querySelector("b").textContent = r.name;
       el.querySelector("small").textContent = r.area || "";
