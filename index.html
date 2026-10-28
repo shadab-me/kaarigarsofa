@@ -355,11 +355,11 @@ window.SITE = {
   email: "",                        // optional, e.g. "hello@kaarigarsofa.in"
 
   // Google Ads: Goals > Conversions > (your action) > Tag setup > "Use Google tag"
-  googleAdsId: "AW-XXXXXXXXXX",
+  googleAdsId: "AW-18542845350",
   conversions: {
-    call:     "AW-XXXXXXXXXX/xxxxxxxxxxxxxxxxxxx",  // "Click to call" action
-    whatsapp: "AW-XXXXXXXXXX/xxxxxxxxxxxxxxxxxxx",  // "WhatsApp click" action
-    form:     "AW-XXXXXXXXXX/xxxxxxxxxxxxxxxxxxx"   // "Quote form" action
+    call:     "AW-18542845350/J2lzCN2Ql60dEKa79YlF",  // "Click to call" action
+    whatsapp: "AW-18542845350/yyipCJC7m60dEKa79YlF",  // "WhatsApp click" action
+    form:     "AW-18542845350/1aSeCJO7m60dEKa79YlF"   // "Quote form" action
   },
 
   // Optional: a Google Apps Script web-app URL that writes form leads into a Google Sheet.
@@ -891,7 +891,7 @@ window.SITE = {
   if (isSet(S.googleAdsId)) {
     var g = document.createElement("script"); g.async = true;
     g.src = "https://www.googletagmanager.com/gtag/js?id=" + S.googleAdsId; document.head.appendChild(g);
-    gtag("js", new Date()); gtag("config", S.googleAdsId, { allow_enhanced_conversions: true });
+    gtag("js", new Date()); gtag("config", S.googleAdsId, { allow_enhanced_conversions: false });
   }
   function track(kind, done) {
     var to = S.conversions[kind];
@@ -944,7 +944,7 @@ window.SITE = {
       $("#thanksWaText").textContent = "Open WhatsApp";
     }
     form.hidden = true; $("#thanks").hidden = false; $("#thanksBig").focus({ preventScroll: true });
-    if (isSet(S.googleAdsId)) gtag("set", "user_data", { phone_number: "+91" + d.phone }); // enhanced conversions
+    // Basic conversion events only. Do not send quote customer data to Google.
     track("form", function () { if (!S.leadSheetUrl) location.href = wa; });
   });
 
