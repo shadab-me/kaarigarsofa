@@ -354,8 +354,8 @@ window.SITE = {
           <select id="f-area" name="area">
             <optgroup label="Noida"><option>Noida (sectors 1–80)</option><option>Noida (sectors 81–168)</option><option>Noida Expressway</option></optgroup>
             <optgroup label="Greater Noida West"><option>Gaur City / Noida Extension</option><option>Greater Noida West (other)</option></optgroup>
-            <optgroup label="Ghaziabad"><option>Indirapuram</option><option>Vaishali / Vasundhara / Kaushambi</option><option>Crossings Republik</option><option>Raj Nagar Extension</option></optgroup>
-            <optgroup label="Delhi"><option>East Delhi (Mayur Vihar / Patparganj)</option></optgroup>
+            <optgroup label="Ghaziabad"><option>Indirapuram</option><option>Vaishali / Vasundhara / Kaushambi</option><option>Crossings Republik</option><option>Raj Nagar Extension</option><option>Ghaziabad (other)</option></optgroup>
+            <optgroup label="East Delhi"><option>East Delhi (Mayur Vihar / Patparganj)</option><option>East Delhi (other)</option></optgroup>
             <option>Other</option>
           </select>
         </div>
@@ -662,12 +662,15 @@ window.SITE = {
     }
     if (hit) {
       $$("[data-area]").forEach(function (e) { e.textContent = hit; });
-      // Preselect the same area in the form: "Gaur City" -> "Gaur City / Noida Extension", "Sector 150" -> "Noida (sectors 81–168)"
-      var h = hit.toLowerCase(), sec = h.match(/^sector (\d+)$/);
-      var opt = $$("#f-area option").filter(function (o) {
-        var t = o.textContent.toLowerCase();
-        return sec ? t.indexOf(+sec[1] <= 80 ? "1–80" : "81–168") > -1 : h !== "noida" && t.indexOf(h) > -1;
-      })[0];
+      // Preselect the same area in the form: "Gaur City" -> "Gaur City / Noida Extension", "Sector 150" -> "Noida (sectors 81–168)",
+      // anything without its own option falls back to its group's "(other)", e.g. "Preet Vihar" -> "East Delhi (other)"
+      var h = hit.toLowerCase();
+      var el = $$(".area li, .area h3").filter(function (e) { var t = e.textContent.trim().toLowerCase(); return t === h || t.indexOf(h + " ") === 0; })[0];
+      var group = el.closest(".area").querySelector("h3").textContent.trim().toLowerCase();
+      var sec = group === "noida" && h.match(/^sector (\d+)$/);
+      var find = function (s) { return $$("#f-area optgroup option").filter(function (o) { return o.parentNode.label.toLowerCase() === group && o.textContent.toLowerCase().indexOf(s) > -1; })[0]; };
+      var opt = sec ? find(+sec[1] <= 80 ? "1–80" : "81–168")
+        : (h !== group && (find(h) || find(h.replace(/ \d+$/, "")))) || find(group + " (other)");
       if (opt) opt.selected = true;
     }
   }
