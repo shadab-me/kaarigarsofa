@@ -10,18 +10,24 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/logo-canva.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Kaarigar Sofa Repair">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://www.kaarigarsofa.in/">
 <meta property="og:title" content="Sofa repair at home in Noida &amp; Ghaziabad | Kaarigar Sofa Repair">
 <meta property="og:description" content="Send a photo on WhatsApp, get a price in 15 minutes. We fix it at your home. No advance for repairs.">
-<meta property="og:image" content="img/logo-canva.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<meta property="og:image" content="https://www.kaarigarsofa.in/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Poppins";font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format("woff2")}
+@font-face{font-family:"Poppins";font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format("woff2")}
 :root{
   --teal:#0E5E57;--teal-d:#0A4641;--teal-l:#E3F0EE;
-  --gold:#F2A900;--gold-d:#B97F00;--gold-l:#FFF4D6;
+  --gold:#F2A900;--gold-d:#8A5F00;--gold-l:#FFF4D6;
   --cream:#FBF7F0;--paper:#FFFFFF;--ink:#1B2524;--muted:#566664;--line:#E7DFD2;
-  --wa:#1DA851;--wa-d:#178A43;
+  --wa:#15803D;--wa-d:#116B33;
   --r:16px;--shadow:0 10px 30px -12px rgba(14,46,43,.25);
   --head:"Poppins","Segoe UI",system-ui,sans-serif;
   --body:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
@@ -57,6 +63,7 @@ p{margin:0 0 1em}
 /* top bar + header */
 .topbar{background:var(--teal-d);color:#E6F2F0;font-size:.85rem;text-align:center;padding:8px 16px}
 .topbar b{color:var(--gold)}
+@media(max-width:639px){.topbar{font-size:.78rem;padding:7px 10px}.topbar .tb-long{display:none}}
 header.site{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--teal)}
@@ -73,6 +80,14 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   radial-gradient(700px 380px at -10% 110%,rgba(14,94,87,.12),transparent 60%)}
 .hero-grid{display:grid;gap:28px}
 @media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:48px}.hero{padding:64px 0 72px}}
+/* phones: pull the estimate form up right under the headline, benefits follow it */
+@media(max-width:959px){
+  .hero-copy{display:contents}
+  .hero-grid{gap:0}
+  .hero-grid .rating{justify-self:start}
+  .hero-grid .quote{order:1;margin:4px 0 8px}
+  .hero-grid .ticks,.hero-grid .btns,.hero-grid .note{order:2}
+}
 .hero h1 .hl{color:var(--teal);background:linear-gradient(transparent 62%,rgba(242,169,0,.45) 0)}
 .ticks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}
 .ticks li{display:flex;gap:10px;align-items:flex-start}
@@ -139,7 +154,8 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--line);font-size:.94rem;text-align:left}
 .compare th{font:600 .88rem var(--head);background:var(--cream)}
 .compare th.us,.compare td.us{background:var(--teal-l);color:var(--teal-d);font-weight:600}
-.compare tr:last-child td{border-bottom:0}
+.compare tbody th{background:none;font:400 .94rem/1.6 var(--body)}
+.compare tr:last-child td,.compare tr:last-child th{border-bottom:0}
 
 /* before/after + fabrics */
 .ba{display:grid;gap:28px;align-items:center}
@@ -197,8 +213,7 @@ footer h3{font-size:.95rem;color:var(--ink)}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 footer a{color:var(--muted)}
 .legal{border-top:1px solid var(--line);margin-top:28px;padding-top:16px;font-size:.8rem}
-#privacy summary{cursor:pointer;color:var(--teal);font-weight:600}
-#privacy div{margin-top:10px;max-width:80ch}
+.legal a{color:var(--teal);font-weight:600}
 
 /* sticky mobile bar + floating whatsapp */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08)}
@@ -225,6 +240,7 @@ window.SITE = {
   phoneText: "+91 99999 99999",     // how the number is shown on the page
   whatsapp: "919999999999",         // WhatsApp number: 91 + 10 digits, no + or spaces
   hours: "8 AM – 9 PM, all 7 days",
+  openHour: 8, closeHour: 21,       // the same hours as numbers, 24-hour clock, India time
   siteUrl: "https://www.kaarigarsofa.in/",
   email: "",                        // optional, e.g. "hello@kaarigarsofa.in"
 
@@ -267,13 +283,13 @@ window.SITE = {
   <symbol id="i-logo" viewBox="0 0 64 64"><g fill="none" stroke="#0E5E57" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 31V22a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v9"/><path d="M31 16v15"/><rect x="7" y="27" width="9" height="17" rx="4.5"/><rect x="46" y="27" width="9" height="17" rx="4.5"/><path d="M16 35h30v9H16z"/><path d="M12 44v4M50 44v4"/></g><path d="M58 7 51 37" stroke="#F2A900" stroke-width="3.2" stroke-linecap="round"/><path d="M51 39c-3 9-16 12-41 11" fill="none" stroke="#F2A900" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 4"/></symbol>
 </svg>
 
-<div class="topbar">Doorstep sofa repair in <b>Noida · Greater Noida West · Ghaziabad · East Delhi</b> — open <span data-hours>8 AM – 9 PM, all 7 days</span></div>
+<div class="topbar"><span class="tb-long">Doorstep sofa repair in </span><b>Noida · Greater Noida West · Ghaziabad · East Delhi</b><span class="tb-long"> — open <span data-hours>8 AM – 9 PM, all 7 days</span></span></div>
 
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Kaarigar Sofa Repair, home">
       <svg aria-hidden="true"><use href="#i-logo"/></svg>
-      <span><span class="brand-name">Kaarigar</span><span class="brand-sub">SOFA REPAIR</span></span>
+      <span><span class="brand-name">Kaarigar</span> <span class="brand-sub">SOFA REPAIR</span></span>
     </a>
     <a class="btn btn-call head-call" data-tel href="tel:+919999999999">
       <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
@@ -287,7 +303,7 @@ window.SITE = {
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <div class="rating" data-rating hidden><span class="stars">★★★★★</span><span data-rating-text></span></div>
       <span class="eyebrow">Doorstep service · same-day visits</span>
       <h1><span class="hl" data-service-h>Sofa repair at home</span> in <span data-area>Noida</span>. Fixed in front of you.</h1>
@@ -308,7 +324,7 @@ window.SITE = {
     <div class="card quote" id="quote">
       <form id="leadForm" novalidate>
         <h2>Get a free estimate</h2>
-        <p class="sub">Takes 20 seconds. We call back within 10 minutes during working hours.</p>
+        <p class="sub" id="formSub">Takes 20 seconds. We call back within 10 minutes during working hours.</p>
         <div class="field">
           <label for="f-name">Your name</label>
           <input id="f-name" name="name" autocomplete="name" required placeholder="e.g. Neha">
@@ -344,13 +360,13 @@ window.SITE = {
           </select>
         </div>
         <button class="btn btn-gold" type="submit">Get my free estimate</button>
-        <p class="fine">We use your number only to reply about your sofa. No spam. <a href="#privacy">Privacy</a></p>
+        <p class="fine">We use your number only to reply about your sofa. No spam. <a href="privacy.html">Privacy</a></p>
       </form>
       <div class="thanks" id="thanks" hidden>
         <svg class="ic" style="width:56px;height:56px;color:var(--wa)" aria-hidden="true"><use href="#i-check"/></svg>
-        <p class="big">Thanks! We'll call you shortly.</p>
-        <p>Want an exact price faster? Send 2–3 photos of the sofa on WhatsApp.</p>
-        <a class="btn btn-wa" id="thanksWa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Send photos on WhatsApp</a>
+        <p class="big" id="thanksBig">Thanks! We'll call you shortly.</p>
+        <p id="thanksNote">Want an exact price faster? Send 2–3 photos of the sofa on WhatsApp.</p>
+        <a class="btn btn-wa" id="thanksWa" data-wa href="https://wa.me/919999999999"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span id="thanksWaText">Send photos on WhatsApp</span></a>
       </div>
     </div>
   </div>
@@ -496,13 +512,13 @@ window.SITE = {
     <div class="center"><span class="eyebrow">Why people choose us</span><h2>What's different about booking with us</h2></div>
     <div style="overflow-x:auto;margin-top:24px">
       <table class="compare">
-        <thead><tr><th></th><th class="us">Kaarigar Sofa Repair</th><th>Typical local shop</th></tr></thead>
+        <thead><tr><td></td><th scope="col" class="us">Kaarigar Sofa Repair</th><th scope="col">Typical local shop</th></tr></thead>
         <tbody>
-          <tr><td>Price before the visit</td><td class="us">Yes, on WhatsApp from photos</td><td>"Aake dekhenge"</td></tr>
-          <tr><td>Advance payment</td><td class="us">None for repairs</td><td>Often asked upfront</td></tr>
-          <tr><td>Warranty</td><td class="us">6 months, in writing</td><td>A verbal promise</td></tr>
-          <tr><td>Choosing fabric</td><td class="us">Swatches at your home</td><td>You visit the shop</td></tr>
-          <tr><td>After the job</td><td class="us">We sweep up foam and threads</td><td>Mess left behind</td></tr>
+          <tr><th scope="row">Price before the visit</th><td class="us">Yes, on WhatsApp from photos</td><td>"Aake dekhenge"</td></tr>
+          <tr><th scope="row">Advance payment</th><td class="us">None for repairs</td><td>Often asked upfront</td></tr>
+          <tr><th scope="row">Warranty</th><td class="us">6 months, in writing</td><td>A verbal promise</td></tr>
+          <tr><th scope="row">Choosing fabric</th><td class="us">Swatches at your home</td><td>You visit the shop</td></tr>
+          <tr><th scope="row">After the job</th><td class="us">We sweep up foam and threads</td><td>Mess left behind</td></tr>
         </tbody>
       </table>
     </div>
@@ -572,7 +588,7 @@ window.SITE = {
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#i-logo"/></svg><span><span class="brand-name">Kaarigar</span><span class="brand-sub">SOFA REPAIR</span></span></a>
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#i-logo"/></svg><span><span class="brand-name">Kaarigar</span> <span class="brand-sub">SOFA REPAIR</span></span></a>
         <p style="margin-top:12px">Doorstep sofa repair, fabric change, cushion refilling, leather and recliner repair across Noida, Greater Noida West, Ghaziabad and East Delhi. We come to you, so there's no shop to visit.</p>
       </div>
       <div>
@@ -595,14 +611,8 @@ window.SITE = {
       </div>
     </div>
     <div class="legal">
-      <details id="privacy">
-        <summary>Privacy policy</summary>
-        <div>
-          <p>When you fill in the estimate form, call us or message us on WhatsApp, we receive your name, phone number, area and details about your sofa. We use them only to give you a price, arrange the visit, send your warranty and follow up on the job. We don't sell or share your details with anyone else.</p>
-          <p>This site uses Google Ads conversion tracking, which sets cookies to measure which ads lead to enquiries. You can control ad personalisation at <a href="https://adssettings.google.com" rel="noopener" target="_blank">adssettings.google.com</a>. To have your details deleted, message us on WhatsApp and we'll remove them within 7 days.</p>
-        </div>
-      </details>
-      <p style="margin-top:12px">© <span id="yr">2026</span> Kaarigar Sofa Repair. Prices are starting rates. Your final price is confirmed before work begins.</p>
+      <p><a href="privacy.html">Privacy policy</a></p>
+      <p>© <span id="yr">2026</span> Kaarigar Sofa Repair. Prices are starting rates. Your final price is confirmed before work begins.</p>
     </div>
   </div>
 </footer>
@@ -628,7 +638,12 @@ window.SITE = {
   $$("[data-hours]").forEach(function (e) { e.textContent = S.hours; });
   if (S.email) { var em = $("[data-email]"); em.href = "mailto:" + S.email; em.textContent = S.email; $("[data-email-wrap]").hidden = false; }
   $("#yr").textContent = new Date().getFullYear();
-  $$('a[href="#privacy"]').forEach(function (a) { a.addEventListener("click", function () { $("#privacy").open = true; }); });
+
+  // --- Working hours, India time: never promise a 10-minute call-back at midnight ---
+  var hr = new Date(Date.now() + 330 * 60000).getUTCHours();
+  var openNow = hr >= S.openHour && hr < S.closeHour;
+  var openAt = (S.openHour % 12 || 12) + (S.openHour < 12 ? " AM" : " PM");
+  if (!openNow) $("#formSub").textContent = "Takes 20 seconds. We're closed right now, so we'll call you after " + openAt + ".";
 
   // --- Ad-matched headline: ?s=recliner and/or ?area=Indirapuram in the ad's final URL ---
   var q = new URLSearchParams(location.search);
@@ -663,7 +678,7 @@ window.SITE = {
   if (isSet(S.googleAdsId)) {
     var g = document.createElement("script"); g.async = true;
     g.src = "https://www.googletagmanager.com/gtag/js?id=" + S.googleAdsId; document.head.appendChild(g);
-    gtag("js", new Date()); gtag("config", S.googleAdsId);
+    gtag("js", new Date()); gtag("config", S.googleAdsId, { allow_enhanced_conversions: true });
   }
   function track(kind, done) {
     var to = S.conversions[kind];
@@ -689,14 +704,24 @@ window.SITE = {
     $("#phoneErr").style.display = ok ? "none" : "block";
     if (!ok) { $("#f-phone").focus(); return; }
     if (!d.name) d.name = "Customer";
-    if (S.leadSheetUrl && navigator.sendBeacon) {
-      navigator.sendBeacon(S.leadSheetUrl, new URLSearchParams({ name: d.name, phone: d.phone, service: d.service, area: d.area,
-        page: location.pathname + location.search, gclid: q.get("gclid") || "", time: new Date().toISOString() }));
+    if (S.leadSheetUrl) {
+      var body = new URLSearchParams({ name: d.name, phone: d.phone, service: d.service, area: d.area,
+        page: location.pathname + location.search, gclid: q.get("gclid") || "", time: new Date().toISOString() });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(S.leadSheetUrl, body)))
+        fetch(S.leadSheetUrl, { method: "POST", mode: "no-cors", body: body });
     }
     var msg = "Hi " + S.brand + ", I'm " + d.name + " from " + d.area + ". I need: " + d.service + ". My number is " + d.phone + ". I'll send photos here.";
     var wa = waBase + "?text=" + encodeURIComponent(msg);
     $("#thanksWa").href = wa;
+    if (S.leadSheetUrl) {
+      $("#thanksBig").textContent = openNow ? "Thanks! We'll call you within 10 minutes." : "Thanks! We'll call you after " + openAt + ".";
+    } else { // the lead only reaches us if they press Send in WhatsApp, so say so plainly
+      $("#thanksBig").textContent = "Last step: press Send in WhatsApp";
+      $("#thanksNote").textContent = "WhatsApp is opening with your details already typed. Press Send so they reach us. If it didn't open, tap the button below.";
+      $("#thanksWaText").textContent = "Open WhatsApp";
+    }
     form.hidden = true; $("#thanks").hidden = false;
+    if (isSet(S.googleAdsId)) gtag("set", "user_data", { phone_number: "+91" + d.phone }); // enhanced conversions
     track("form", function () { if (!S.leadSheetUrl) location.href = wa; });
   });
 
@@ -735,7 +760,7 @@ window.SITE = {
     priceRange: "₹349 – ₹16,000",
     areaServed: ["Noida", "Greater Noida West", "Ghaziabad", "Indirapuram", "East Delhi"].map(function (n) { return { "@type": "Place", name: n }; }),
     openingHoursSpecification: { "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "08:00", closes: "21:00" },
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: ("0" + S.openHour).slice(-2) + ":00", closes: ("0" + S.closeHour).slice(-2) + ":00" },
     hasOfferCatalog: { "@type": "OfferCatalog", name: "Sofa repair services",
       itemListElement: $$(".svc h3").map(function (h) { return { "@type": "Offer", itemOffered: { "@type": "Service", name: h.textContent } }; }) }
   };
