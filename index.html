@@ -364,7 +364,8 @@ window.SITE = {
 
   // Optional: a Google Apps Script web-app URL that writes form leads into a Google Sheet.
   // Leave empty and every form lead is sent to your WhatsApp instead.
-  leadSheetUrl: "",
+  leadSheetUrl: "https://script.google.com/macros/s/AKfycbxBjps3KuDSz1mKi0D4njmTUdwnJ7yq-a7PU0lfh5N9FkXDBoAqX6f6ZFBx7kjZMYY/exec",
+  leadFormKey: "kg-89cdb756adcc417ce210a4b3",
 
   // Fill these ONLY with real numbers and real reviews from your Google Business Profile.
   googleReviewsUrl: "",             // e.g. "https://g.page/r/XXXX/review"
@@ -907,6 +908,24 @@ window.SITE = {
     else if (a.href.indexOf("wa.me") > -1) track("whatsapp");
   });
 
+  // Confirmed-save check: the Sheet receiver answers via JSONP (cross-origin POST replies are unreadable).
+  // Bounded: if the script neither loads nor errors within timeoutMs, treat as failure and clean up.
+  function jsonp(url, timeoutMs, cb) {
+    var s = document.createElement("script");
+    var finished = false;
+    var finish = function (r) {
+      if (finished) return; finished = true;
+      clearTimeout(timer);
+      try { delete window.__kgcb; } catch (e) { window.__kgcb = undefined; }
+      if (s.parentNode) s.parentNode.removeChild(s);
+      cb(r);
+    };
+    window.__kgcb = function (r) { finish(r); };
+    s.onerror = function () { finish(null); };
+    var timer = setTimeout(function () { finish(null); }, timeoutMs || 4000);
+    s.src = url; document.head.appendChild(s);
+  }
+
   // --- Quote form: validate, save (optional), track, then hand off to WhatsApp ---
   var form = $("#leadForm"), ph = $("#f-phone"), phErr = $("#phoneErr");
   var digits = function () { return ph.value.replace(/\D/g, "").slice(-10); };
@@ -918,34 +937,68 @@ window.SITE = {
   ph.addEventListener("input", function () { // clear the error as soon as the number is right
     if (ph.getAttribute("aria-invalid") === "true" && /^[6-9]\d{9}$/.test(digits())) markPhone(true);
   });
+  // Idempotency key: one per distinct enquiry. Kept across retries of the SAME submission (server
+  // dedupes and returns the original lead ID), renewed after a confirmed save or when the number changes.
+  var newIdem = function () {
+    return (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(36).slice(2);
+  };
+  var idem = newIdem();
+  var confirming = false;
+  ph.addEventListener("input", function () { if (!confirming) idem = newIdem(); });
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    if (confirming) return;
     var d = { name: $("#f-name").value.trim(), phone: digits(),
               service: $("#f-service").value, area: $("#f-area").value };
     var ok = /^[6-9]\d{9}$/.test(d.phone);
     markPhone(ok);
     if (!ok) { ph.focus(); return; }
-    form.querySelector("[type=submit]").disabled = true;
+    var btn = form.querySelector("[type=submit]");
+    btn.disabled = true;
     if (!d.name) d.name = "Customer";
-    if (S.leadSheetUrl) {
-      var body = new URLSearchParams({ name: d.name, phone: d.phone, service: d.service, area: d.area,
-        page: location.pathname + location.search, gclid: q.get("gclid") || "", time: new Date().toISOString() });
-      if (!(navigator.sendBeacon && navigator.sendBeacon(S.leadSheetUrl, body)))
-        fetch(S.leadSheetUrl, { method: "POST", mode: "no-cors", body: body });
-    }
     var msg = "Hi " + S.brand + ", I'm " + d.name + " from " + d.area + ". I need: " + d.service + ". My number is " + d.phone + ". I'll send photos here.";
     var wa = waBase + "?text=" + encodeURIComponent(msg);
     $("#thanksWa").href = wa;
-    if (S.leadSheetUrl) {
-      $("#thanksBig").textContent = openNow ? "Thanks! We'll call you within 10 minutes." : "Thanks! We'll call you after " + openAt + ".";
-    } else { // the lead only reaches us if they press Send in WhatsApp, so say so plainly
+    var saved = function (leadId) { // shown ONLY after the private Sheet confirms the row
+      confirming = false;
+      idem = newIdem(); // next enquiry is a different lead
+      $("#thanksBig").textContent = "Your request was received. Reference: " + leadId + ".";
+      $("#thanksNote").textContent = "Want an exact price faster? Send 2\u20133 photos of the sofa on WhatsApp.";
+      form.hidden = true; $("#thanks").hidden = false; $("#thanksBig").focus({ preventScroll: true });
+      track("form");
+    };
+    var failed = function () { // honest fallback: receipt was never confirmed (row may or may not exist)
+      confirming = false; // keep idem: a retry re-checks/re-sends with the same key, server dedupes
+      btn.disabled = false;
+      $("#thanksBig").textContent = "Couldn't confirm your request reached us";
+      $("#thanksNote").textContent = "Send the same details on WhatsApp below (press Send there), or fix anything above and try the form again.";
+      $("#thanksWaText").textContent = "Send details on WhatsApp";
+      $("#thanks").hidden = false; // form stays visible with the visitor's entries intact for retry
+      $("#thanksBig").focus({ preventScroll: true });
+    };
+    if (S.leadSheetUrl && S.leadFormKey) {
+      confirming = true;
+      var body = new URLSearchParams({ key: S.leadFormKey, idem: idem, name: d.name, phone: d.phone, service: d.service, area: d.area,
+        page: location.pathname + location.search, gclid: q.get("gclid") || "", gbraid: q.get("gbraid") || "", wbraid: q.get("wbraid") || "",
+        utm_source: q.get("utm_source") || "", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || "" });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(S.leadSheetUrl, body)))
+        fetch(S.leadSheetUrl, { method: "POST", mode: "no-cors", body: body });
+      var deadline = Date.now() + 12000; // overall cap, then honest fallback
+      var poll = function () {
+        jsonp(S.leadSheetUrl + "?op=status&key=" + encodeURIComponent(S.leadFormKey) + "&idem=" + encodeURIComponent(idem) + "&callback=__kgcb", 4000, function (r) {
+          if (r && r.ok && r.saved && r.leadId) { saved(r.leadId); return; }
+          if (Date.now() < deadline) { setTimeout(poll, 1500); return; }
+          failed();
+        });
+      };
+      setTimeout(poll, 1200);
+    } else { // WhatsApp-only handoff: the lead reaches us only if they press Send
       $("#thanksBig").textContent = "Last step: press Send in WhatsApp";
       $("#thanksNote").textContent = "WhatsApp is opening with your details already typed. Press Send so they reach us. If it didn't open, tap the button below.";
       $("#thanksWaText").textContent = "Open WhatsApp";
+      form.hidden = true; $("#thanks").hidden = false; $("#thanksBig").focus({ preventScroll: true });
+      track("form", function () { location.href = wa; });
     }
-    form.hidden = true; $("#thanks").hidden = false; $("#thanksBig").focus({ preventScroll: true });
-    // Basic conversion events only. Do not send quote customer data to Google.
-    track("form", function () { if (!S.leadSheetUrl) location.href = wa; });
   });
 
   // --- Real reviews, rating and work photos (only if filled in) ---
