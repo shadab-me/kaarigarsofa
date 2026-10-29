@@ -440,7 +440,7 @@ window.SITE = {
       <form id="leadForm" novalidate>
         <p class="status" id="openStatus"><span class="dot" aria-hidden="true"></span><span id="openText">Open 8&nbsp;AM – 9&nbsp;PM, all 7 days</span></p>
         <h2>Get a free estimate</h2>
-        <p class="sub" id="formSub">Takes 20 seconds. We call back within 10 minutes during working hours.</p>
+        <p class="sub" id="formSub">Takes 20 seconds. You get a reference number on screen as soon as we receive it.</p>
         <div class="field">
           <label for="f-name">Your name <span class="opt">(optional)</span></label>
           <input id="f-name" name="name" autocomplete="name" placeholder="e.g. Neha">
@@ -844,7 +844,7 @@ window.SITE = {
   var openAt = clock(S.openHour), closeAt = clock(S.closeHour);
   $("#openText").textContent = openNow ? "Open now, till " + closeAt : "Closed now, opens at " + openAt;
   $("#openStatus").className = "status " + (openNow ? "is-open" : "is-closed");
-  if (!openNow) $("#formSub").textContent = "Takes 20 seconds. We're closed right now, so we'll call you after " + openAt + ".";
+  if (!openNow) $("#formSub").textContent = "Takes 20 seconds. We're closed right now, but the form still works and you get a reference number right away.";
 
   // --- Ad-matched headline: ?s=recliner and/or ?area=Indirapuram in the ad's final URL ---
   var q = new URLSearchParams(location.search);
